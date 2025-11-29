@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .sidebar{
+            width: 250px;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+        }
+        input, select, button{
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0;
+        }
+        .navbar{
+            position: fixed;
+            left: 250px;
+            right: 0;
+            top: 0;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            gap: 20px;
+            background: #f8f8f8;
+        }
+        .navbar select, .navbar button{
+            padding: 8px;
+        }
+        .content{
+            margin-left: 250px;
+            margin-top: 70px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .card{
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-shadow: 0 0 5px #aaa;
+        }
+        .card button{ margin-top: 5px;}
+        
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Add Fleet</h3>
+
+        <input type="text" id="reg" placeholder="Reg No">
+
+        <select id="category">
+            <option value="">Select Category</option>
+            <option>Auto</option>
+            <option>Car</option>
+            <option>Truck</option>
+            <option>Bus</option>
+        </select>
+        
+        <input type="text" id="driver" placeholder="Driver Name">
+        <select id="availability">
+            <option value="available">Available</option>
+            <option value="unavailable">Unavailable</option>
+        </select>
+
+        <button id="addFleet">Add Fleet</button>
+    </div>
+    <div class="navbar">
+        <select id="filterCategory">
+            <option value="">All Categories</option>
+            <option>Auto</option>
+            <option>Car</option>
+            <option>Truck</option>
+            <option>Bus</option>
+        </select>
+
+        <select id="filterAvailability">
+            <option value="">All availability</option>
+            <option>Available</option>
+            <option>Unavailable</option>
+        </select>
+
+        <button id="clearFilter">Clear Filter</button>
+    </div>
+
+    <div class="content" id="fleetContainer"></div>
+    <script src="admin.js"></script>
+</body>
+</html>
